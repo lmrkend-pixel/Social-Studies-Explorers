@@ -1,0 +1,212 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Educational brown/tan theme matching the reference */
+    --background: 36 45% 92%; /* #f5e6d3 beige background */
+    --foreground: 28 48% 22%; /* #5a3618 dark brown text */
+
+    --card: 0 0% 100%; /* white cards */
+    --card-foreground: 28 48% 22%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 28 48% 22%;
+
+    --primary: 25 59% 51%; /* #c77d3a orange-brown */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 45% 89%; /* #ead5bb light tan */
+    --secondary-foreground: 28 48% 22%;
+
+    --muted: 34 35% 82%; /* #d4a574 muted tan */
+    --muted-foreground: 28 42% 35%; /* #8b5a2b medium brown */
+
+    --accent: 36 45% 89%;
+    --accent-foreground: 28 48% 22%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 34 35% 82%; /* #d4a574 */
+    --input: 34 35% 82%;
+    --ring: 25 59% 51%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 36 45% 92%;
+    --sidebar-foreground: 28 48% 22%;
+    --sidebar-primary: 25 59% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 36 45% 89%;
+    --sidebar-accent-foreground: 28 48% 22%;
+    --sidebar-border: 34 35% 82%;
+    --sidebar-ring: 25 59% 51%;
+  }
+
+  .dark {
+    --background: 28 45% 10%;
+    --foreground: 36 100% 98%;
+
+    --card: 28 45% 12%;
+    --card-foreground: 36 100% 98%;
+
+    --popover: 28 45% 12%;
+    --popover-foreground: 36 100% 98%;
+
+    --primary: 25 75% 55%;
+    --primary-foreground: 28 45% 10%;
+
+    --secondary: 28 35% 20%;
+    --secondary-foreground: 36 100% 98%;
+
+    --muted: 28 35% 18%;
+    --muted-foreground: 36 25% 70%;
+
+    --accent: 28 35% 20%;
+    --accent-foreground: 36 100% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 28 35% 25%;
+    --input: 28 35% 25%;
+    --ring: 25 75% 55%;
+
+    --sidebar-background: 28 45% 10%;
+    --sidebar-foreground: 36 100% 98%;
+    --sidebar-primary: 25 75% 55%;
+    --sidebar-primary-foreground: 28 45% 10%;
+    --sidebar-accent: 28 35% 18%;
+    --sidebar-accent-foreground: 36 100% 98%;
+    --sidebar-border: 28 35% 20%;
+    --sidebar-ring: 25 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+@layer utilities {
+  .animate-in {
+    animation: animateIn 0.3s ease-out;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .slide-in-from-top {
+    animation: slideInFromTop 0.5s ease-out;
+  }
+
+  .zoom-in {
+    animation: zoomIn 0.5s ease-out;
+  }
+
+  /* 3D Flip Card Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 100px;
+  border: 2px solid hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
+}
