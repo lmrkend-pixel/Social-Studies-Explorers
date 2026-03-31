@@ -54,17 +54,17 @@ function HistoryUnmaskedGame({
     options: ['Vladimir Lenin', 'Joseph Stalin', 'Nikita Khrushchev', 'Leon Trotsky'],
     answer: 1
   }, {
-    image: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/7c2f.png',
+    image: '/images/history-unmasked/franklin-roosevelt.png',
     question: 'Pangulo ng Estados Unidos na namuno sa bansa sa panahon ng Ikalawang Digmaang Pandaigdig at naglunsad ng New Deal programs.',
     options: ['Harry Truman', 'Franklin D. Roosevelt', 'Dwight Eisenhower', 'Woodrow Wilson'],
     answer: 1
   }, {
-    image: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/95c6.png',
+    image: '/images/history-unmasked/nikita-khrushchev.png',
     question: 'Lider ng Soviet Union pagkatapos ni Stalin na kilala sa panahon ng Cuban Missile Crisis.',
     options: ['Mikhail Gorbachev', 'Leonid Brezhnev', 'Nikita Khrushchev', 'Yuri Andropov'],
     answer: 2
   }, {
-    image: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/c30e.png',
+    image: '/images/history-unmasked/benito-mussolini.png',
     question: 'Diktador ng Italya na nag-alyado sa Nazi Germany sa panahon ng Ikalawang Digmaang Pandaigdig.',
     options: ['Victor Emmanuel III', 'Benito Mussolini', 'Umberto II', 'Giuseppe Garibaldi'],
     answer: 1
