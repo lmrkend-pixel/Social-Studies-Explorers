@@ -6,6 +6,15 @@ import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle2, XCircle, ArrowLeft } from 'lucide-react';
 
+const shuffleArray = <T,>(items: T[]): T[] => {
+  const shuffled = [...items];
+  for (let i = shuffled.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 // Quiz data from the original site
 const quizTopics = [
   { id: 'imp', title: 'Imperyalismo at Kolonyalismo', index: 1 },
@@ -656,13 +665,28 @@ export default function QuizzesSection() {
   const [userInput, setUserInput] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [quizComplete, setQuizComplete] = useState(false);
+  const [shuffledMcqData] = useState(() =>
+    Object.fromEntries(
+      Object.entries(mcqData).map(([topicId, questions]) => [topicId, shuffleArray(questions)])
+    ) as typeof mcqData
+  );
+  const [shuffledTfData] = useState(() =>
+    Object.fromEntries(
+      Object.entries(tfData).map(([topicId, questions]) => [topicId, shuffleArray(questions)])
+    ) as typeof tfData
+  );
+  const [shuffledIdentificationData] = useState(() =>
+    Object.fromEntries(
+      Object.entries(identificationData).map(([topicId, questions]) => [topicId, shuffleArray(questions)])
+    ) as typeof identificationData
+  );
 
   const currentQuizData = selectedTopic
     ? quizType === 'mcq'
-      ? mcqData[selectedTopic as keyof typeof mcqData] || []
+      ? shuffledMcqData[selectedTopic as keyof typeof shuffledMcqData] || []
       : quizType === 'tf'
-      ? tfData[selectedTopic as keyof typeof tfData] || []
-      : identificationData[selectedTopic as keyof typeof identificationData] || []
+      ? shuffledTfData[selectedTopic as keyof typeof shuffledTfData] || []
+      : shuffledIdentificationData[selectedTopic as keyof typeof shuffledIdentificationData] || []
     : [];
 
   const handleTopicSelect = (topicId: string) => {

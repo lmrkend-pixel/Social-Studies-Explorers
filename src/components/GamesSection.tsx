@@ -4,6 +4,15 @@ import { Card } from '@/components/ui/card';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Trophy, Flag, Lightbulb, Shuffle, Clock, CheckCircle2, XCircle, X } from 'lucide-react';
 
+const shuffleArray = <T,>(items: T[]): T[] => {
+  const shuffled = [...items];
+  for (let i = shuffled.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 // Game card data
 const gameCards = [{
   id: 'history-unmasked',
@@ -38,7 +47,7 @@ function HistoryUnmaskedGame({
 }: {
   onClose: () => void;
 }) {
-  const questions = [{
+  const [questions] = useState(() => shuffleArray([{
     image: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/fcad.png',
     question: 'Siya ang arkiduke ng Austria-Hungary na ang pagkakapaslang noong 1914 ang naging mitsa ng pagsisimula ng Unang Digmaang Pandaigdig.',
     options: ['Franz Ferdinand', 'Otto von Bismarck', 'Wilhelm II', 'Nicholas II'],
@@ -68,7 +77,7 @@ function HistoryUnmaskedGame({
     question: 'Diktador ng Italya na nag-alyado sa Nazi Germany sa panahon ng Ikalawang Digmaang Pandaigdig.',
     options: ['Victor Emmanuel III', 'Benito Mussolini', 'Umberto II', 'Giuseppe Garibaldi'],
     answer: 1
-  }];
+  }]));
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState<'correct' | 'wrong' | null>(null);
@@ -142,7 +151,7 @@ function FlagTasticGame({
 }: {
   onClose: () => void;
 }) {
-  const questions = [{
+  const [questions] = useState(() => shuffleArray([{
     image: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/a83d.png',
     options: ['Philippines', 'Thailand', 'Vietnam', 'Indonesia'],
     answer: 0
@@ -182,7 +191,7 @@ function FlagTasticGame({
     image: 'https://flagcdn.com/w320/za.png',
     options: ['South Africa', 'Kenya', 'Nigeria', 'Ghana'],
     answer: 0
-  }];
+  }]));
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState<'correct' | 'wrong' | null>(null);
@@ -264,7 +273,7 @@ function DecodeThePastGame({
 }: {
   onClose: () => void;
 }) {
-  const puzzles = [{
+  const [puzzles] = useState(() => shuffleArray([{
     image: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/ace8.png',
     answer: 'IMPERYALISMO',
     hint: 'Ano ang tawag sa patakaran na ito?',
@@ -289,7 +298,7 @@ function DecodeThePastGame({
     answer: 'KOMUNISMO',
     hint: 'Ano ang tawag sa sistemang ito?',
     explanation: 'Ang komunismo ay isang sistemang pang-ekonomiya at pampulitika kung saan ang mga ari-arian ay pagmamay-ari ng estado o ng buong komunidad, at layuning magkaroon ng pantay-pantay na pamumuhay.'
-  }];
+  }]));
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
@@ -402,8 +411,8 @@ function MatchingGameComponent({
     definition: 'Organisasyong pandaigdig para sa kapayapaan'
   }];
   
-  const [terms] = useState(pairs.map(p => p.term));
-  const [definitions] = useState(pairs.map(p => p.definition));
+  const [terms] = useState(() => shuffleArray(pairs.map(p => p.term)));
+  const [definitions] = useState(() => shuffleArray(pairs.map(p => p.definition)));
   const [selectedTerm, setSelectedTerm] = useState<number | null>(null);
   const [connections, setConnections] = useState<Array<{term: number, def: number}>>([]);
   const [score, setScore] = useState(0);

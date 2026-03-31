@@ -283,7 +283,7 @@ function VideosSection() {
       topic: 'Ikalawang Digmaang Pandaigdig', 
       description: 'Explore totalitarianism, major battles, and post-war world order.',
       thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/761e.jpg',
-      videoUrl: 'https://www.youtube.com/watch?v=Owta4wKfLpM&list=PLVqSLMJqMNY51RN8fswX4P5OoPEGXef6U'
+      videoUrl: 'https://youtube.com/playlist?list=PLVqSLMJqMNY51RN8fswX4P5OoPEGXef6U&si=KxDbpyQ8h7iZJl9P'
     },
     { 
       topic: 'Cold War', 
