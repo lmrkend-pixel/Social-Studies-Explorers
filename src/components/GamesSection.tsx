@@ -47,7 +47,8 @@ function HistoryUnmaskedGame({
 }: {
   onClose: () => void;
 }) {
-  const [questions] = useState(() => shuffleArray([{
+  const [questions] = useState(() =>
+    shuffleArray([{
     image: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/fcad.png',
     question: 'Siya ang arkiduke ng Austria-Hungary na ang pagkakapaslang noong 1914 ang naging mitsa ng pagsisimula ng Unang Digmaang Pandaigdig.',
     options: ['Franz Ferdinand', 'Otto von Bismarck', 'Wilhelm II', 'Nicholas II'],
@@ -77,7 +78,18 @@ function HistoryUnmaskedGame({
     question: 'Diktador ng Italya na nag-alyado sa Nazi Germany sa panahon ng Ikalawang Digmaang Pandaigdig.',
     options: ['Victor Emmanuel III', 'Benito Mussolini', 'Umberto II', 'Giuseppe Garibaldi'],
     answer: 1
-  }]));
+  }]).map((q) => {
+      const optionIndices = q.options.map((_, idx) => idx);
+      const shuffledIndices = shuffleArray(optionIndices);
+      const shuffledOptions = shuffledIndices.map((idx) => q.options[idx]);
+      const newAnswerIndex = shuffledIndices.indexOf(q.answer);
+      return {
+        ...q,
+        options: shuffledOptions,
+        answer: newAnswerIndex,
+      };
+    })
+  );
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState<'correct' | 'wrong' | null>(null);
@@ -151,7 +163,8 @@ function FlagTasticGame({
 }: {
   onClose: () => void;
 }) {
-  const [questions] = useState(() => shuffleArray([{
+  const [questions] = useState(() =>
+    shuffleArray([{
     image: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/a83d.png',
     options: ['Philippines', 'Thailand', 'Vietnam', 'Indonesia'],
     answer: 0
@@ -191,7 +204,18 @@ function FlagTasticGame({
     image: 'https://flagcdn.com/w320/za.png',
     options: ['South Africa', 'Kenya', 'Nigeria', 'Ghana'],
     answer: 0
-  }]));
+  }]).map((q) => {
+      const optionIndices = q.options.map((_, idx) => idx);
+      const shuffledIndices = shuffleArray(optionIndices);
+      const shuffledOptions = shuffledIndices.map((idx) => q.options[idx]);
+      const newAnswerIndex = shuffledIndices.indexOf(q.answer);
+      return {
+        ...q,
+        options: shuffledOptions,
+        answer: newAnswerIndex,
+      };
+    })
+  );
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState<'correct' | 'wrong' | null>(null);

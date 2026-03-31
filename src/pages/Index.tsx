@@ -138,7 +138,7 @@ function HomeSection({ onNavigate }: { onNavigate: (section: string) => void }) 
           {[
             { title: 'Imperyalismo at Kolonyalismo', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/8204.jpg', link: 'https://youtube.com/playlist?list=PLVqSLMJqMNY5M1ts6gNSL2dLtdiyvulul&si=rxg0iz1VMmoaWPv0' },
             { title: 'Unang Digmaang Pandaigdig', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/f9cd.jpg', link: 'https://youtube.com/playlist?list=PLVqSLMJqMNY5XL10eNOxLIM69zxAL-ev6&si=p0wV6K_rZV_Lw-aF' },
-            { title: 'Ikalawang Digmaang Pandaigdig', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/761e.jpg', link: 'https://youtube.com/playlist?list=PLVqSLMJqMNY5XL10eNOxLIM69zxAL-ev6&si=p0wV6K_rZV_Lw-aF' },
+            { title: 'Ikalawang Digmaang Pandaigdig', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/761e.jpg', link: 'https://www.youtube.com/playlist?list=PLVqSLMJqMNY51RN8fswX4P5OoPEGXef6U' },
             { title: 'Cold War', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/4ff0.jpg', link: 'https://youtube.com/playlist?list=PLVqSLMJqMNY5FL-qFuaS6HktVD_LLkDzI&si=U09XqlzIl3j8Nd1Q' },
             { title: 'Globalisasyon', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/27e2.jpg', link: 'https://youtube.com/playlist?list=PLVqSLMJqMNY4VLTEZg_MDjOOfLy6Nf8BQ&si=32Iknoip44Mub6cO' },
           ].map((video) => (
@@ -189,7 +189,7 @@ function HomeSection({ onNavigate }: { onNavigate: (section: string) => void }) 
             <Button className="w-full bg-gradient-to-r from-[#c77d3a] to-[#a0642e] hover:from-[#b36e31] hover:to-[#8f5626] text-white font-bold text-lg py-6 rounded-xl shadow-lg border-2 border-[#8b5a2b]">
               Play Now
             </Button>
-          </div>
+          </div>f
         </Card>
 
         {/* Quizzes */}

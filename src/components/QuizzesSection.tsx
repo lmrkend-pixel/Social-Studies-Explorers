@@ -667,7 +667,22 @@ export default function QuizzesSection() {
   const [quizComplete, setQuizComplete] = useState(false);
   const [shuffledMcqData] = useState(() =>
     Object.fromEntries(
-      Object.entries(mcqData).map(([topicId, questions]) => [topicId, shuffleArray(questions)])
+      Object.entries(mcqData).map(([topicId, questions]) => [
+        topicId,
+        shuffleArray(
+          questions.map((q) => {
+            const optionIndices = q.options.map((_, idx) => idx);
+            const shuffledIndices = shuffleArray(optionIndices);
+            const shuffledOptions = shuffledIndices.map((idx) => q.options[idx]);
+            const newAnswerIndex = shuffledIndices.indexOf(q.answer);
+            return {
+              ...q,
+              options: shuffledOptions,
+              answer: newAnswerIndex,
+            };
+          })
+        ),
+      ])
     ) as typeof mcqData
   );
   const [shuffledTfData] = useState(() =>
