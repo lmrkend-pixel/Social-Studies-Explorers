@@ -56,7 +56,7 @@ export default function Index() {
             <nav className="hidden lg:flex gap-2">
               {[
                 { id: 'home', label: 'Home' },
-                { id: 'videos', label: 'Videos' },
+                { id: 'videos', label: 'Lessons' },
                 { id: 'games', label: 'Games' },
                 { id: 'quizzes', label: 'Quizzes' },
                 { id: 'trivia', label: 'Trivia Corner' },
@@ -136,11 +136,11 @@ function HomeSection({ onNavigate }: { onNavigate: (section: string) => void }) 
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {[
-            { title: 'Imperyalismo at Kolonyalismo', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/8204.jpg', link: 'https://youtube.com/playlist?list=PLVqSLMJqMNY5M1ts6gNSL2dLtdiyvulul&si=rxg0iz1VMmoaWPv0' },
-            { title: 'Unang Digmaang Pandaigdig', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/f9cd.jpg', link: 'https://youtube.com/playlist?list=PLVqSLMJqMNY5XL10eNOxLIM69zxAL-ev6&si=p0wV6K_rZV_Lw-aF' },
-            { title: 'Ikalawang Digmaang Pandaigdig', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/761e.jpg', link: 'https://www.youtube.com/playlist?list=PLVqSLMJqMNY51RN8fswX4P5OoPEGXef6U' },
-            { title: 'Cold War', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/4ff0.jpg', link: 'https://youtube.com/playlist?list=PLVqSLMJqMNY5FL-qFuaS6HktVD_LLkDzI&si=U09XqlzIl3j8Nd1Q' },
-            { title: 'Globalisasyon', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/27e2.jpg', link: 'https://youtube.com/playlist?list=PLVqSLMJqMNY4VLTEZg_MDjOOfLy6Nf8BQ&si=32Iknoip44Mub6cO' },
+            { title: 'Imperyalismo at Kolonyalismo', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/8204.jpg', link: 'https://youtu.be/mcDMsOWYzEw?si=bXyHaGYrhv4hIgMh' },
+            { title: 'Unang Digmaang Pandaigdig', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/f9cd.jpg', link: 'https://youtu.be/D7ATKP_k9Ko?si=wr_Ipbj4NpiTDR_f' },
+            { title: 'Ikalawang Digmaang Pandaigdig', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/761e.jpg', link: 'https://youtu.be/zl7CXTExMR4?si=VdIr2pIMcfqp6W-R' },
+            { title: 'Cold War', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/4ff0.jpg', link: 'https://youtu.be/pjOPjrBrRpM?si=31RX151DuHB91sjZ' },
+            { title: 'Globalisasyon', thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/27e2.jpg', link: 'https://youtu.be/jS2_9vsM_1U?si=F0pu6g4n9Db9JLlB' },
           ].map((video) => (
             <div
               key={video.title}
@@ -303,7 +303,7 @@ function VideosSection() {
     <div className="space-y-8">
       <Card className="border-4 border-[#8b5a2b] bg-white p-8 shadow-xl rounded-xl">
         <h2 className="text-4xl md:text-5xl font-bold text-[#8b5a2b] mb-4">
-          📹 Video Lessons
+          📹 Lessons
         </h2>
         <p className="text-xl text-[#5a3618]">
           Select a topic to explore short learning videos and key focus areas.
