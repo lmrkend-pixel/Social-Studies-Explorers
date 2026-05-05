@@ -29,8 +29,7 @@ export default function AboutSection() {
         
         <div className="space-y-4 text-lg text-[#5a3618] leading-relaxed">
           <p>
-            <strong className="text-[#8b5a2b]">Hi! 👋</strong> We are third-year students from{' '}
-            <strong>Batangas State University ARASOF Nasugbu Campus</strong>, majoring in Social Studies. 
+            <strong className="text-[#8b5a2b]">Hi! 👋</strong> We are third-year students majoring in Social Studies. 
             We created this website as part of our research about how social media and digital platforms 
             can help improve students' learning in Social Studies.
           </p>
