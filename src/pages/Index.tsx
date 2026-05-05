@@ -271,31 +271,31 @@ function VideosSection() {
       topic: 'Imperyalismo at Kolonyalismo', 
       description: 'Understand causes, methods of control, and effects on colonies.',
       thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/8204.jpg',
-      videoUrl: 'https://youtube.com/playlist?list=PLVqSLMJqMNY5M1ts6gNSL2dLtdiyvulul&si=rxg0iz1VMmoaWPv0'
+      videoUrl: 'https://vt.tiktok.com/ZS94rVN3h/'
     },
     { 
       topic: 'Unang Digmaang Pandaigdig', 
       description: 'Learn MAIN causes, trench warfare, and Treaty of Versailles impacts.',
       thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/f9cd.jpg',
-      videoUrl: 'https://youtube.com/playlist?list=PLVqSLMJqMNY5XL10eNOxLIM69zxAL-ev6&si=p0wV6K_rZV_Lw-aF'
+      videoUrl: 'https://vt.tiktok.com/ZS946Q2ak/'
     },
     { 
       topic: 'Ikalawang Digmaang Pandaigdig', 
       description: 'Explore totalitarianism, major battles, and post-war world order.',
       thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/761e.jpg',
-      videoUrl: 'https://youtube.com/playlist?list=PLVqSLMJqMNY51RN8fswX4P5OoPEGXef6U&si=KxDbpyQ8h7iZJl9P'
+      videoUrl: 'https://vt.tiktok.com/ZS94Mysdy/'
     },
     { 
       topic: 'Cold War', 
       description: 'Study proxy wars, nuclear tension, and the fall of the Soviet Union.',
       thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/4ff0.jpg',
-      videoUrl: 'https://youtube.com/playlist?list=PLVqSLMJqMNY5FL-qFuaS6HktVD_LLkDzI&si=U09XqlzIl3j8Nd1Q'
+      videoUrl: 'https://vt.tiktok.com/ZS94rr8jF/'
     },
     { 
       topic: 'Globalisasyon', 
       description: 'Discover the foundations of interconnected global trade and cultures.',
       thumbnail: 'https://grazia-prod.oss-ap-southeast-1.aliyuncs.com/resources/uid_100020512/27e2.jpg',
-      videoUrl: 'https://youtube.com/playlist?list=PLVqSLMJqMNY4VLTEZg_MDjOOfLy6Nf8BQ&si=32Iknoip44Mub6cO'
+      videoUrl: 'https://vt.tiktok.com/ZS94AVRQb/'
     }
   ];
 
@@ -336,7 +336,7 @@ function VideosSection() {
                 {video.topic}
               </h3>
               <Badge className="bg-[#f5e6d3] text-[#8b5a2b] border border-[#d4a574]">
-                {video.videoUrl ? 'Watch Now' : 'Coming Soon'}
+                {video.videoUrl ? 'TikTok Video' : 'Coming Soon'}
               </Badge>
               <p className="text-[#5a3618] leading-relaxed">{video.description}</p>
             </div>
@@ -346,6 +346,12 @@ function VideosSection() {
 
 {/* Additional Youtube Videos */}
       <Card className="border-4 border-[#8b5a2b] bg-gradient-to-b from-[#8b5a2b] to-[#6b4423] p-8 shadow-2xl rounded-xl">
+        
+      <div className="text-center mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#f5e6d3] mb-2 border-b-2 border-[#d4a574] pb-4 inline-block px-8">
+            Youtube Videos
+          </h2>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {[
