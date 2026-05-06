@@ -6,7 +6,7 @@ import GamesSection from '@/components/GamesSection';
 import QuizzesSection from '@/components/QuizzesSection';
 import TriviaSection from '@/components/TriviaSection';
 import AboutSection from '@/components/AboutSection';
-import { BookOpen, GraduationCap, Video, Play } from 'lucide-react';
+import { BookOpen, GraduationCap, Video, Play, Target } from 'lucide-react';
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
@@ -56,7 +56,7 @@ export default function Index() {
             <nav className="hidden lg:flex gap-2">
               {[
                 { id: 'home', label: 'Home' },
-                { id: 'videos', label: 'Lessons' },
+                { id: 'videos', label: 'Videos' },
                 { id: 'games', label: 'Games' },
                 { id: 'quizzes', label: 'Quizzes' },
                 { id: 'trivia', label: 'Trivia Corner' },
@@ -303,7 +303,7 @@ function VideosSection() {
     <div className="space-y-8">
       <Card className="border-4 border-[#8b5a2b] bg-white p-8 shadow-xl rounded-xl">
         <h2 className="text-4xl md:text-5xl font-bold text-[#8b5a2b] mb-4">
-          📹 Lessons
+          📹 Video Lessons
         </h2>
         <p className="text-xl text-[#5a3618]">
           Select a topic to explore short learning videos and key focus areas.
@@ -386,6 +386,135 @@ function VideosSection() {
         </div>
       </Card>
 
+{/* Lessons */}
+<Card className="border-4 border-[#d49240] bg-white p-8 shadow-xl rounded-xl">
+  <div className="flex items-start gap-4 mb-6">
+  <BookOpen className="h-12 w-12 text-[#d49240] flex-shrink-0" />
+    <div>
+      <h3 className="text-3xl font-bold text-[#d49240] mb-2">Lessons</h3>
+      <div className="h-1 w-32 bg-gradient-to-r from-[#d49240] to-[#8b5a2b] rounded-full"></div>
+    </div>
+  </div>
+
+  <p className="text-lg text-[#5a3618] mb-6 leading-relaxed">
+    The <strong>Social Studies Explorers Hub</strong> helps learners understand history in a more fun, interactive, and engaging way.
+  </p>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {[
+  {
+    icon: '🌍',
+    title: 'Imperyalismo at Komunismo',
+    desc: 'Learn about colonization, imperialism, and communist ideologies.',
+    links: [
+      {
+        label: 'European Expansion',
+        url: 'https://www.britannica.com/topic/Western-colonialism/European-expansion-since-1763',
+      },
+      {
+        label: 'Imperialism',
+        url: 'https://www.britannica.com/topic/imperialism',
+      },
+    ],
+  },
+  {
+    icon: '⚔️',
+    title: 'Unang Digmaang Pandaigdig',
+    desc: 'Explore the causes, events, and effects of World War I.',
+    links: [
+      {
+        label: 'World War I',
+        url: 'https://www.britannica.com/event/World-War-I',
+      },
+      {
+        label: 'WWI Discovery',
+        url: 'https://www.britannica.com/discover/World-War-I',
+      },
+    ],
+  },
+  {
+    icon: '💣',
+    title: 'Ikalawang Digmaang Pandaigdig',
+    desc: 'Discover the battles, leaders, and effects of World War II.',
+    links: [
+      {
+        label: 'World War II',
+        url: 'https://www.britannica.com/event/World-War-II',
+      },
+      {
+        label: 'WWII for Kids',
+        url: 'https://kids.britannica.com/kids/article/World-War-II/353934',
+      },
+    ],
+  },
+  {
+    icon: '☢️',
+    title: 'Cold War',
+    desc: 'Understand the tensions between world superpowers after WWII.',
+    links: [
+      {
+        label: 'Cold War',
+        url: 'https://www.britannica.com/event/Cold-War',
+      },
+      {
+        label: 'Cold War Summary',
+        url: 'https://www.britannica.com/summary/Cold-War',
+      },
+    ],
+  },
+  {
+    icon: '🌐',
+    title: 'Globalisasyon',
+    desc: 'Learn how countries connect through trade, culture, and technology.',
+    links: [
+      {
+        label: 'Globalization',
+        url: 'https://www.britannica.com/money/globalization',
+      },
+      {
+        label: 'Cultural Globalization',
+        url: 'https://www.britannica.com/science/cultural-globalization',
+      },
+    ],
+  },
+].map((item) => (
+      <div
+        key={item.title}
+        className="bg-gradient-to-br from-[#f5e6d3] to-[#ead5bb] border-2 border-[#d49240] rounded-xl p-5 hover:scale-[1.02] transition-all duration-300"
+      >
+        <div className="flex items-start gap-4 mb-4">
+          <div className="text-4xl flex-shrink-0">{item.icon}</div>
+
+          <div>
+            <h4 className="font-bold text-[#8b5a2b] text-lg mb-1">
+              {item.title}
+            </h4>
+
+            <p className="text-[#5a3618] text-sm">
+              {item.desc}
+            </p>
+          </div>
+        </div>
+
+        {/* Clickable Links */}
+        <div className="flex flex-wrap gap-2 mt-3">
+          {item.links.map((link) => (
+            <a
+              key={link.label}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-[#d49240] text-white rounded-lg text-sm font-semibold hover:bg-[#8b5a2b] transition"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</Card>
+      
       {/* Additional Video Categories */}
       <Card className="border-4 border-[#d49240] bg-gradient-to-br from-white to-[#f5e6d3] p-8 shadow-xl rounded-xl">
         <div className="text-center">
